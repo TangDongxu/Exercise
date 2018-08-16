@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>盒模型</title>
+        <style>
+            *{
+                /*选择所有元素*/
+                margin:0;
+                padding:0;
+            }
+            #div1{
+                height:300px;
+                width:300px;
+                background:red;
+                border:5px dashed black;
+                /*padding:20px;*/
+                /*分着写的时候表示，4个值上右下左，2个值上下，右左*/
+                padding:5px 10px 15px 20px;
+                /*margin:20px;*/
+                /*分着写的时候与padding一样的顺序*/
+                margin:5px 10px 15px 20px;
+            }
+        </style>
+    </head>
+    <body>
+        盒模型：从外到内-margin，border，padding，内容
+        margin:外边距，给标签加样式不会加到margin上。
+        border:边框,有三个值，border-width ，border-style ，border-color
+                border-style：dotted(点状)，solid(实线)，double(双线),dashed(虚线)
+        padding:内边距,给内容加样式会包括padding.
+        <div id="div1">
+            我的盒模型
+        </div>
+
+    </body>
+</html>
