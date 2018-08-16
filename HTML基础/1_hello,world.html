@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--若是在创建HTML文件中并没有带着大体框架则可以使用
+    快捷键html:5然后按tab键-->
+<!--指定了当前文件格式，为html，doctype是文件类型的含义-->
+<!--这是一种超文本标记语言通过<关键字></关键字>来构成大体的网页框架-->
+<html lang="en">
+    <head>
+        <!--与body相同是html的子标签-->
+        <meta charset="UTF-8">
+        <!--char字符set集合；用来识别语言，如gb2312（只能识别中文）-->
+        <title>hello，world！</title>
+        <!--title显示在页面的上面相当于名字-->
+    </head>
+    <body>
+    <!--body内容会显示在html的页面中，想做的内容需要在body里面写-->
+        hello,world!
+
+        <h1>hello,world!</h1>
+        <!--<h>标签是标题功能,分为<h1-h6>,从一到六逐渐变小-->
+
+        <a href="http://www.baidu.com" target="_blank">hello,world</a>
+        <!--<a>标签为超链接，href里面为想要跳转的网址，两个标签中间为
+        想点什么东西开始跳转，但是这样做会把本来的网页替换掉，target是用来
+        解决这个问题的，代表新开一个页面-->
+
+        <p>hello,world!</p>
+        hello，world！<br/>
+        hello，world！<br/>
+        <!--<p>标签代表着段落，自带着边距效果,<br/>代表着换行-->
+
+        hello，world！<br/>
+        &gt;&lt;
+        hello，&nbsp;&nbsp;&nbsp;&nbsp;world！<br/>
+        <!--在html中不管有多少个空格都只算一个想要加上空格需要&nbsp;代表;
+        &gt;是大于号；&lt;是小于号-->
+
+        <img src="" alt="" title="这是个图片">
+        <!--引入一个图片放在内容区域，src是图片的路径，分为相对路径
+        和绝对路径。
+        相对路径是相对文件本身找到图片若是不在一个目录下，则通过..跳到上一级
+        直到找到共同的目录在找到图片；
+        绝对路径是一个写死的路径，比如网站上的图片地址，硬盘里面的图片，一般不推荐
+        alt是图片找不到的时候显示的内容；
+        title是鼠标划入图片显示的内容 -->
+
+        <ol start="43">
+            <li>hello,world!</li>
+            <li>hello,world!</li>
+            <li>hello,world!</li>
+        </ol>
+        <!--ol是有序列表,start是从几开始，不设置则从一开始-->
+
+        <ul>
+            <li>hello,world!</li>
+            <li>hello,world!</li>
+            <li>hello,world!</li>
+        </ul>
+        <!--ul是无序列表-->
+
+        <table border="2">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+        </table>
+        <!--table标签是表格，可以用来进行页面的划分变成一部分一部分的用来布局
+        tr是行，td是列-->
+
+        <div></div>
+        <!--div标签用来进行布局，代表一个区域并没有实际样式显示-->
+
+        <span>hello,world!</span>
+        <!--单行文本一般用span标签，用来操作文字，与div一样没有实际意义-->
+
+        <h1>每一个标签里面都可以套别的标签当做子元素</h1>
+
+
+
+
+
+
+    </body>
+</html>
