@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>样式</title>
+        <!--外部样式-->
+        <link rel="stylesheet" href="../CSS基础/1_样式.css">
+        <!--link是连接-->
+        <!--在head里面加一个style标签，叫做内部样式-->
+        <style>
+            div{
+                /*会选中所有的div,*/
+                background: deeppink;
+                font-size:40px;
+                color:#232bdc;
+                width:500px;
+            }
+            div{
+                width:600px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="background: red;font-size:40px;color:white;">
+            <!--在标签里加上style相当于标签里面的一个属性这样加样式的方式叫做
+                           内联样式
+            -->
+            <!--style给标签里面的内容加样式
+            font-size是字体样式，px是单位，像素的意思
+            color是字体颜色，可以用英文也可以用#加上16进制表示颜色-->
+            我是个页面
+        </div>
+        <div>
+            我是内部样式
+        </div>
+    <h1>这几个设置样式的方式，没有冲突的时候相互叠加；
+        有冲突时比如都设置了color，
+        就会谁距离标签近用谁的样式
+    </h1>
+
+    </body>
+</html>
