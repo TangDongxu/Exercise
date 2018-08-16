@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>浮动</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            div{
+                /*把块级元素变成行级元素*/
+                /*display:inline;*/
+                /*把行级元素变成块级元素
+                display：block*/
+                /*既是行级元素又是块级元素*/
+                /*可能会有兼容性问题，而且中间会有空格*/
+                /*display:inline-block;*/
+               /* 效果与display：inline-block效果一样*/
+                /*float:left;*/
+                float:right;
+                /*浮动会导致空间释放，后面的元素会上来占空间*/
+                /*解决方法：1.谁想解决元素塌陷带来的问题可以在自身扥设计样式的时候清除
+                              clear：both来清除别人带来的浮动效果*/
+                            /*2.给浮动的元素加一个固定的高不让后面的元素受到影响*/
+            }
+            #div1{
+                background: red;
+                width:200px;
+                height:200px;
+            }
+            #div2{
+                background: green;
+                width:200px;
+                height:200px;
+                /*经常用于做显示隐藏需求，会释放元素的空间*/
+                /*display:none;*/
+            }
+            #div3{
+                background: blue;
+                width:200px;
+                height:200px;
+            }
+        </style>
+    </head>
+    <body>
+    <!--浮动效果像使块级元素变成行级元素,宽不会充满整个父元素,可以显示在一行上面;
+    但是还是可以设置宽和高，如果不设置就由内容撑开-->
+        <div id="div1">
+            我是div1
+        </div>
+        <div id="div2">
+            我是div2
+        </div>
+        <div id="div3">
+            我是div3
+        </div>
+
+    </body>
+</html>
