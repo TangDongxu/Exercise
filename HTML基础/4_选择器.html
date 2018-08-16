@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>选择器</title>
+        <style>
+            div{
+                height:300px;
+            }
+            #div1{
+                background: #232bdc;
+            }
+            #div2{
+                background: black;
+            }
+            #div3{
+                background: green;
+            }
+            .cls1{
+                background: yellow;
+            }
+            #div1 h1{
+                color:white;
+            }
+            #div2 h1{
+                color:white;
+            }
+            #div1>h1{
+                color:green;
+            }
+            #div4 h1{
+                color:yellow;
+            }
+            .cls5.cls4{
+                color:black;
+            }
+            #h1{
+                color:white;
+                background: #ff0000;
+            }
+
+        </style>
+    </head>
+    <body>
+        选择器类型：id选择器，class选择器，标签选择器，子代选择器，后代选择器
+    <!--整个HTML中不能有相同名字的id选择器，别的id选择器不可以与他同名,在写样式时候用#表示-->
+    <!--class选择器可以有同名因为它是一类，在写样式时候用.表示-->
+    <!--tag选择器(标签选择器)-->
+    <!--此外还有后代选择器就是在父元素选择器和子元素选择器中间加空格如#div h1-->
+    <!--子代选择器选中亲孩子元素用>连接-->
+    有冲突时优先级：id>class>tag
+            权重值:100> 10  >1
+        <!--比较的时候先从id比,然后一一抵消,权重值不是一定的不代表着11个class就比
+        id选择器高了，-->
+        有冲突的时候首先比较优先级，其次比较权重值
+        <!--想选择两种选择器都包括的标签可以用，连接如-->
+
+
+        <div id="div1" class="cls1">
+            <h1>我是div1</h1>
+            <div>
+                <h1>我不是亲子代</h1>
+            </div>
+        </div>
+        <div id="div2" class="cls2">
+            <h1> 我是div2</h1>
+        </div>
+        <div id="div3" class="cls3">
+            <h1> 我是div3</h1>
+        </div>
+        <div id="div4" class="cls4 cls5">
+            <h1 id="h1"> 我是div4</h1>
+        </div>
+
+
+    </body>
+</html>
