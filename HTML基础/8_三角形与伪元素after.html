@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>三角形与伪元素</title>
+        <style>
+            #div1{
+                width:0;
+                border:10px solid transparent;
+                border-top-color:green;
+            }
+
+            #div2::after{
+                content: '';
+                width:0;
+                border:10px solid transparent;
+                border-top-color:red;
+            }
+
+            #div3::after{
+                content: '我会撑开三角形哦！';
+                width:0;
+                border:10px solid transparent;
+                border-top-color:red;
+            }
+
+            #div4::before{
+                content: '';
+                width:0;
+                border:10px solid transparent;
+                border-top-color:red;
+            }
+
+            .selection::selection{
+                color:red;
+                background:yellow;
+            }
+
+            .first-line{
+                width:150px;
+            }
+
+            .first-line::first-line{
+                color:green;
+            }
+
+            .first-letter::first-letter{
+                color:deeppink;
+            }
+
+            input::placeholder{
+                color:blue;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            利用盒模型的border,先令整个内容为0,在设置边框,这时候就会显示边框;
+            再将边框的颜色变成透明后,将想要显示的部分颜色设置出来就会形成三角形，
+            如果想让箭头向下就要top有颜色，想向右就让left有颜色。
+        </p>
+        <div  id="div1">
+
+        </div>
+        <p>
+            利用伪对象选择器:after也可以实现相同效果.
+            :after选择器在被选元素的内容后面插入内容。
+            使用 content 属性来指定要插入的内容。
+        </p>
+        <div id="div2">
+            after必须在我的后面出现
+        </div>
+        <div id="div3">
+            after必须在我的后面出现
+        </div>
+        <p>
+            伪对象选择器不止有:after,还有:before,:first-line,:first-letter
+            :placeholder,:selection
+        </p>
+        <div id="div4">
+            我会在文字前面出现
+        </div>
+        <p class="selection">
+            :selection:使选中的元素加样式
+        </p>
+        <div class="first-line">
+            :first-line使第一行加样式
+        </div>
+        <div class="first-letter">
+            :first-letter使第一个字符加样式
+        </div>
+        <input type="text" placeholder="我会显示在文本框里">
+
+
+
+    </body>
+</html>
