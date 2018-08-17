@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>定位</title>
+        <style>
+            body{
+                height:100000px;
+            }
+
+            div{
+                float:left;
+                width:200px;
+                height:200px;
+            }
+
+            #div1{
+                background:red;
+            }
+
+            #div2{
+                background:green;
+                position:relative;
+                top:100px;
+                left:100px;
+            }
+
+            #div3{
+                background:blue;
+                position:absolute;
+                top:200px;
+                left:200px;
+            }
+
+            #div4{
+                width:1000px;
+                height:500px;
+                background:yellow;
+                position:relative;
+                margin-left:20px;
+            }
+
+            #div5{
+                background:black;
+                position:fixed;
+                top:300px;
+                right:0;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            position是一个新的属性，有四个值static,relative,absolute,fixed;
+            fixed:相对于浏览器来找到自己的位置;
+            absolute:相对于最近的已经定位的父元素找到自己的位置;
+            static:默认位置不会动;
+            relative:相对于本身的位置来调整自己的位置
+        </p>
+        <div id="div4">
+            <div id="div1">
+
+            </div>
+            <div id="div2">
+
+            </div>
+            <div id="div3">
+
+            </div>
+        </div>
+        <div id="div5">
+
+        </div>
+
+    </body>
+</html>
