@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>transition</title>
+        <style>
+            #div1{
+                width:200px;
+                height:200px;
+                background: #ff0000;
+            }
+            #div1:hover{
+                width:500px;
+                height:500px;
+                transform:rotate(45deg);
+                /*由于老的版本浏览器不兼容需要按照浏览器版本写，
+                从上到下分别是火狐，谷歌，欧朋 ，ie.
+                造成这个原因是因为浏览器的内核不同*/
+                /*-moz-transition:transform 2s linear;*/
+                /*-webkit-transition:transform 2s linear;*/
+                /*-o-transition:transform 2s linear;*/
+                /*-ms-transition:transform 2s linear;*/
+                transition:transform 2s linear;
+                /*linear是线性变化，也有别的变化如先慢后快在变慢*/
+            }
+        </style>
+    </head>
+    <body>
+    <!--<span>-->
+        <!--浏览器解析渲染页面原理-->
+
+<!--浏览器 最重要 最核心的部分是“解释引擎”，也就是“浏览器内核”： 负责对网页语法的解释（如HTML、JavaScript）并渲染（显示）网页。 -->
+<!--网页的工作过程需要使用到两个引擎：渲染引擎和JavaScript引擎 -->
+<!--什么是JavaScript引擎？简单来讲，就是能够提供执行JavaScript代码的运行环境 -->
+<!--所以，通常所谓的浏览器内核也就是浏览器所采用的渲染引擎，排版引擎(Rendering Engine，也有称渲染引擎)，渲染引擎决定了浏览器如何显示网页的内容以及页面的格式信息。不同的浏览器内核对网页编写语法的解释也有不同，因此同一网页在不同的内核的浏览器里的渲染（显示）效果也可能不同，这也是网页编写者需要在不同内核的浏览器中测试网页显示效果的原因。 -->
+<!--浏览器内核很多，如果加上所有的几乎没有什么人在用的非商业的免费内核，那么可能大约有10款以上甚至更多，不过通常我们比较常见的大约只有以下四种：-->
+
+<!-- - Trident ：[ˈtraɪdnt] -->
+<!--IE浏览器(遨游、世界之窗、腾讯TT…都是IE)Trident内核最慢 -->
+<!--IE 以Trident 作为内核引擎 -->
+<!-- - Gecko：[ˈgekəʊ] -->
+<!-- - 开放源代码、以C++编写的网页排版引擎，是跨平台的 -->
+<!--FireFox是基于 Gecko 开发; -->
+<!-- - presto：[ˈprestəʊ] -->
+<!--目前公认网页浏览速度最快的浏览器内核，然而代价是牺牲了网页的兼容性。由Opera Software开发的浏览器排版引擎，Opera（欧朋浏览器），但由于市场选择问题，主要应用在手机平台–Opera mini -->
+<!-- - Webkit： -->
+<!--苹果公司自己的内核，google的chrome也使用webkit作为内核。 -->
+<!--是一个开源的浏览器引擎，同时WebKit 也是苹果Mac OS X 系统引擎框架版本的名称，它拥有清晰的源码结构、极快的渲染速度，包含的 WebCore 排版引擎和 JavaScriptCore解析引擎，均是从KDE的KHTML及KJS引擎衍生而来。 -->
+<!--许多网站都是按照IE来架设的，很多网站不兼容Webkit内核，比如登录界面、网银等网页均不可使用Webkit内核的浏览器。 -->
+    <!--</span>-->
+        <div id="div1">
+
+        </div>
+
+    </body>
+</html>
