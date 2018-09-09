@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            h1~p{
+                /*紧跟着h1才会变色,中间有别的标签会选不中*/
+                color:green;
+            }
+            h1+p{
+                /*h1之后的兄弟P都会变色，选中所有满足兄弟关系的p标签*/
+                color:red;
+            }
+            p[class]{
+                /*这种写法会选中有[]内属性的标签，不一定需要有值*/
+                color:yellow;
+            }
+            p[class='blue']{
+                /*这种写法会选中有[]内属性为等号后面的值的标签*/
+                color:blue;
+            }
+            p[class~='pink']{
+                /*~代表着空格分割*/
+                color:pink;
+            }
+            p[class^='bluep']{
+                /*~代表着以bluep开头*/
+                color: #cccccc;
+            }
+            p[class$='bluep']{
+                /*~代表着以bluep结尾*/
+                color: black;
+            }
+            /*p[class*='blue']{*/
+                /*!**代表着有blue就可以*!*/
+                /*color:#fff;*/
+            /*}*/
+            p[class|='bluep']{
+                /*~代表着以bluep开头并且以-分割*/
+                color: #fff;
+            }
+            a:link{
+                /*如果需要给超链接定义：访问前(link)，鼠标悬停(hover)，当前被点击(active)，已访问(visite)这4种伪类效果
+                而又没有按照一致的书写顺序，不同的浏览器可能会有不同的表现,*/
+                /*超链接的4种状态，需要有特定的书写顺序才能生效*/
+                /*a:link {}*/
+                /*a:visited {}*/
+                /*a:hover {}*/
+                /*a:active {}。*/
+                color:red;
+            }
+            a:visited{
+                color:green;
+            }
+            a:hover{
+                color:black;
+            }
+            a:active{
+                color:yellow;
+            }
+            /*显示颜色顺序link hover active visited*/
+            input:focus{
+                color:green;
+                font-size:18px;
+            }
+            div:first-child{
+                /*选中的是在父元素中是第一个孩子的div*/
+                color:deeppink;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>我是H1标签</h1>
+        <p>我是紧跟着H1的p,会变红</p>
+        <p>我是会变绿的p，并不紧跟着h1</p>
+        <p class>我会变黄</p>
+        <p class="blue">我会变蓝</p>
+        <p class="blue pink">我要变粉色</p>
+        <p class="bluepink">我要变灰色</p>
+        <p class="inkbluep">我要变黑色</p>
+        <p>没有办法*就是这么强大</p>
+        <p class="bluep-pink">我会隐身</p>
+        <a href="#">超链接</a>
+        <input type="text" placeholder="五星巴西">
+        <input type="text"  value="内马尔">
+    <!--placeholder是默认值点在input上会消失，value不会-->
+       <div>
+           <!--<p>ppp</p>-->
+           <div>
+               <p>ppppppppp</p>
+               <p>p1p1p1p1p1p1</p>
+           </div>
+       </div>
+
+
+    </body>
+</html>
