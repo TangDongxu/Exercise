@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            #div1{
+                width:400px;
+                height:400px;
+                background:#f00;
+                /*overflow:hidden;*/
+                /*border:1px solid transparent;*/
+                /*position:absolute;*/
+                /*float:left;*/
+            }
+            #div2{
+                width:200px;
+                height:200px;
+                background:#0f0;
+                margin:50px;
+            }
+
+            #div3{
+                width:200px;
+                height:200px;
+                background:#00f;
+                margin:50px;
+            }
+
+            #div4{
+                width:200px;
+                height:200px;
+                background:#0f0;
+                margin:50px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            当父子关系块级元素，子元素设置向上的边距是本应该是子元素距离父元素的边距
+            会变成原位置不变的父元素到浏览器的边距。
+        </p>
+        <p>
+
+            在父元素用overflow:hidden;或者用透明的border可以解决这个问题;加上绝对定位,浮动也可以
+        </p>
+        <p>
+            当兄弟关系块级元素，两者都设置边距时会合并在一起，并不是两个边距相加
+        </p>
+        <p>
+            浮动，定位可以解决兄弟元素外边距合并问题
+        </p>
+        <div id="div1">
+            <div id="div2">
+
+            </div>
+        </div>
+        <div id="div3">
+
+        </div>
+        <div id="div4">
+
+        </div>
+
+    </body>
+</html>
