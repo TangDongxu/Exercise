@@ -39,9 +39,16 @@
     </head>
     <body>
         块级元素在块级元素的居中:水平居中:margin:0 auto;
-
-        行级元素在块级元素的居中:垂直居中:line-height:与父元素一边高;,就会在父元素中垂直居中
-                                水平居中:在父元素中写text-align:center;会使里面的文本居中
+                                 垂直(水平)居中:position:absolute;
+                                                top:50%;
+                                                left:50%;
+                                                用margin算子元素的宽高一半
+                                                transform: translate(-50%,-50%);
+                                                利用弹性盒模型（有兼容性问题）在父元素display:flex;
+                                                                                        justify-content:center;
+                                                                                        align-items:center;
+        行级元素在块级元素的居中(文字居中):垂直居中:line-height:与父元素一边高;,就会在父元素中垂直居中
+                                 水平居中:在父元素中写text-align:center;会使里面的文本居中
         <div id="div1">
             <span>我想要居中</span>
         </div>
