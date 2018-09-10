@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            a:link{
+                /*如果需要给超链接定义：访问前(link)，鼠标悬停(hover)，当前被点击(active)，已访问(visite)这4种伪类效果
+                而又没有按照一致的书写顺序，不同的浏览器可能会有不同的表现,*/
+                /*超链接的4种状态，需要有特定的书写顺序才能生效*/
+                /*a:link {}*/
+                /*a:visited {}*/
+                /*a:hover {}*/
+                /*a:active {}。*/
+                color:red;
+            }
+            a:visited{
+                color:green;
+            }
+            a:hover{
+                color:black;
+            }
+            a:active{
+                color:yellow;
+            }
+            /*显示颜色顺序link hover active visited*/
+            #input:focus{
+                color:green;
+                font-size:18px;
+            }
+            p:first-child{
+                /*在父元素中必须为第一个孩子才可以被选中*/
+                color:red;
+            }
+            p:first-of-type{
+                /*这个选择器选中的是父元素里第一个p标签*/
+                color:red;
+            }
+            /*last-child与first-child选中方式相同，选中的是最后一个*/
+            /*last-of-type与last-of-child选中方式相同，选中的是最后一个*/
+            /*only-child是在父元素中之中只他这一个子元素才会选中*/
+            /*only-of-type与上面差异一样，在这个父元素里只有一个想要选中的标签才能被选中*/
+            ul li:nth-child(3){
+                /*选中ul中的第三个孩子 在:前若是有选择器则判断第三个孩子是不是该选择器，是则选中，不是选不中*/
+                color:red;
+            }
+            ul li:nth-child(2n){
+                /*选中ul中是2倍数的li*/
+                color:red;
+            }
+            ul li:nth-of-type(3){
+                   /*选中在ul里面的第三个li*/
+                   color:red;
+            }
+            /*last区别与上面相同*/
+            p:empty{
+                /*匹配没有任何子元素（包括text节点）的元素p。*/
+                height:200px;
+                background: #00ff00;
+            }
+            input:checked{
+                /*选中用户界面上处于选中状态的元素，用于input type为radio与checkbox时*/
+                height:20px;
+            }
+            input:disabled{
+                /*选中用户界面上处于禁用状态的元素*/
+                /*enabled选中用户界面上处于可用状态元素与disabled相反*/
+                color:red;
+            }
+
+        </style>
+    </head>
+    <body>
+        <a href="#">超链接</a>
+        <input  type="text" placeholder="五星巴西">
+        <input  type="text"  value="内马尔">
+        <!--placeholder是默认值点在input上会消失，value不会-->
+        <div>
+            <div>
+                <h1>不让P变红</h1>
+                <p>我要变红</p>
+                <p>我变不成</p>
+            </div>
+        </div>
+        <ul>
+            <li>001</li>
+            <li>002</li>
+            <h1>h1h1h1h</h1>
+            <li>003</li>
+            <li>004</li>
+            <li>005</li>
+            <li>006</li>
+            <li>007</li>
+        </ul>
+        <div>
+            <p></p>
+            <p>pppp</p>
+            <p> </p>
+        </div>
+        <form action="填要提交的地址">
+            用户名:<input type="text"><br>
+            密  码:<input type="password"><br>
+            性  别:<input  name="sex" type="radio" checked="checked">男
+                   <input  name="sex" type="radio">女<br>
+            兴  趣:<input type="checkbox">篮球
+                   <input type="checkbox">足球
+                   <input type="checkbox">羽毛球<br>
+            <input type="submit" value="注册" >
+            <input type="reset"  value="取消" disabled="disabled">
+            <!--input的type的几个值
+                button	定义可点击按钮（多数情况下，用于通过 JavaScript 启动脚本）。
+                checkbox	定义复选框。
+                file	定义输入字段和 "浏览"按钮，供文件上传。
+                hidden	定义隐藏的输入字段。
+                image	定义图像形式的提交按钮。
+                password	定义密码字段。该字段中的字符被掩码。
+                radio	定义单选按钮。
+                reset	定义重置按钮。重置按钮会清除表单中的所有数据。
+                submit	定义提交按钮。提交按钮会把表单数据发送到服务器。
+                text	定义单行的输入字段，用户可在其中输入文本。默认宽度为 20 个字符。-->
+            <button type="reset">提交</button>
+            <button type="submit">提交</button>
+            <button type="button">提交</button>
+            <!--button默认值为submit相同是提交，可以设置上面三个值-->
+        </form>
+
+    </body>
+</html>
