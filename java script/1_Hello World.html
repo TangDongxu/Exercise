@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <span>JS可以使页面更具有交互性的脚本语言</span>
+        <span>JS是一种客户端语言</span>
+        <ul>
+            <li>1.JavaScript不允许读写客户机器上的文件。这是有好处的，因为你肯定不希望网页能够读取自己硬盘上的文件，
+                或者能够将病毒写入硬盘，或者能够操作你计算机上的文件。唯一的例外是，JavaScript可以写到浏览器的cookie文件，
+                但是也有一些限制
+            </li>
+            <li> 2.JavaScript不允许写服务器机器上的文件。尽管写服务器上的文件在许多方面是很方便的（
+                比如存储页面点击数或用户填写的表单数据），但是JavaScript不允许这么做。相反，需要用服务器上的一个程序处理和存储这些数据
+                。这个程序可以是用Perl或PHP等语言编写的CGI或Java程序。
+            </li>
+            <li>
+                3.JavaScript不能关闭不是由它自己打开的窗口。这是为了避免一个站点关闭其他任何站点的窗口，从而独占浏览器。
+            </li>
+            <li>
+                4.JavaScript不能从来自另一个服务器的已经打开的网页中读取信息。换句话说，网页不能读取已经打开的其他窗口中的信息，
+                因此无法探察访问这个站点的冲浪者还在访问哪些其他站点。
+            </li>
+        </ul>
+        <p>var 用来声明变量;变量是数据的代号</p>
+        <p>变量的命名:只能包括数字,字母,下划线，$;
+                      并且不能以数字开头，
+                      不能命名关键字如Function
+                      另外要注意的一点是,变量的名称是区分大小写的!
+        </p>
+        <p>定义变量时候字符串需要用引号包起来</p>
+        <p>可以一次声明多个变量</p>
+        <p>一个=用来赋值。两个则用来判断</p>
+        <p>undefined:声明一个变量但是并未赋值，而后调用他会出现undefined</p>
+        <p>变量的类型:基础数据类型:1.字符串2.数字3.布尔型4.undefined
+                      引用数据类型:1.数组2.对象
+        </p>
+        <script>
+            document.write("<h2>Hello,World!</h2>");
+            var contain = 'hello,world';
+            console.log(contain);
+            var num;
+            num = 123;
+            console.log(num);
+            var dog;
+            dog = "小老虎";
+            console.log(dog);
+            var str="some string",strNum="123";
+            console.log(str);
+            var dog,num,badnum;
+            dog = "111";
+            num = 123;
+            badnum = 1.234;
+            console.log(dog,num,badnum);
+            var dog = "小虎子";
+            console.log(dog);
+            console.log(typeof(5==5));
+            console.log(typeof(typeof(5==5)));
+
+
+
+
+        </script>
+
+    </body>
+</html>
