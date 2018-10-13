@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>函数</title>
+    </head>
+    <body>
+        <p>函数又称为方法是对达到某种目的代码的归类以便代码更具有条理</p>
+        <p>用关键字function来进行声明,之后写函数名字命名与变量命名规范一样然后写(){}
+        代码写在大括号里，最后用函数名（）;进行调用.
+        </p>
+        <p>
+            像alert(),prompt(),isNaN()这些也是函数，它们是系统内置的函数!
+        </p>
+        <p>
+            函数{}内就相当于一个作用域,叫做局部作用域;函数身处的作用域叫做全局作用域
+        </p>
+        <p>
+            在全局作用域声明一个变量在局部作用域可以被获取到
+            但是在局部作用域声明一个变量在全局获取不到
+        </p>
+
+        <script>
+            // 1.函数的声明
+           // function fun(){
+           //     var wide=window.prompt("请输入三角形的底边长度！","");
+           //     var high=window.prompt("请输入三角形的高！","");
+           //     var area=wide*high/2;
+           //     if (isNaN(area)) {//判断用户是否输入的是数字
+           //         alert("您的输入有误!");
+           //     } else {
+           //         alert("三角形的面积为"+area);
+           //     }
+           // }
+           // fun();
+           //  var xx = function(){
+           //      var wide=window.prompt("请输入三角形的底边长度！","");
+           //      var high=window.prompt("请输入三角形的高！","");
+           //      var area=wide*high/2;
+           //      if (isNaN(area)) {//判断用户是否输入的是数字
+           //          alert("您的输入有误!");
+           //      } else {
+           //          alert("三角形的面积为"+area);
+           //      }
+           //  };
+           //  xx();
+           //  2.两种声明方式的区别
+            // 第一种可以先调用后封装函数
+            // aa();
+            // function aa(){
+            //     console.log(11111111);
+            // }
+            // aa();
+           // 第二种不可以
+           //  xx();带括号的意思是调用函数，这时候xx根本不是函数
+           //  var xx = function(){
+           //      console.log(3333);
+           //  };
+           //  xx();
+           // 3.作用域
+           //  function xx(){
+           //      var a = 1;
+           //      console.log(a);
+           //  }
+           //  xx();
+            // console.log(a);//这个a显示is not defined
+          var a = 1;
+          function fn(){
+              console.log(a);//可以获取到a
+          }
+            fn();
+          //4.传参数
+            //参数就相当于声明一个变量在调用的时候给赋值
+            function aa(width,height){
+                // console.log(width);
+                // console.log(height);
+                sss = width*height/2;
+                console.log(sss);
+            }
+            // aa();
+            aa(234,567);
+        </script>
+    </body>
+</html>
