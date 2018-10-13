@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>分支判断if</title>
+    </head>
+    <body>
+        <p>单一选择结构if(){}</p>
+        <p>二路选择结构if(){}else</p>
+        <p>三元表达式bool?1 : 2</p>
+        <p>switch是多路选择结构当判断成功后会从成功处开始进行编译,可以使用 break来只执行符合一个条件的语句</p>
+        <script>
+            var num = 1;
+            if(num == true){
+                console.log(1111);
+            }
+            var str = 'abc';
+            if(str == 'www'){
+                console.log(111111);
+            }else{
+                console.log(2222222);
+            }
+            var Num = 234;
+            var nm = Num?1:2;
+            console.log(nm);
+            var xx = 123;
+            switch(xx){
+                case 123:
+                    console.log(1111111);
+                    break;
+                case 234:
+                    console.log(2222222);
+                case 345:
+                    console.log(33333);
+                default:
+                    console.log(4444444444);
+            }
+        </script>
+
+    </body>
+</html>
