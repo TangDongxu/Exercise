@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <p>
+            循环用来指明当某些条件保持为真时要重复的动作。当条件得不到满足时，就跳出循环语句。在 JavScript 中有四种循环结构可用。
+        </p>
+        <ul>
+            <li>由计数器控制的循环（for）</li>
+            <li>在循环的开头测试表达式（while）</li>
+            <li>在循环的末尾测试表达式（do/while）</li>
+            <li>对对象的每个属性都进行操作（for/in）</li>
+        </ul>
+        <p>for 语句指定了一个计数器变量，一个测试条件，以及更新该计数器的操作。在每次循环的重复之前，都将测试该条件。如果测试成功，将运行循环中的代码。如果测试不成功，不运行循环中的代码，程序继续运行紧跟在循环后的第一行代码。在执行该循环后，计算机变量将在下一次循环之前被更新。</p>
+        <p>do..while循环与while循环不同之处在于它至少将代码块中的代码执行一次</p>
+
+
+        <script>
+            for(var i = 0;i<10;i++){
+                console.log(i);
+            }
+            // var i = 0;
+            // for(;;){
+            //     if(i<10){
+            //         console.log(i);
+            //         i++;
+            //
+            //     }else{
+            //         break;
+            //     }
+            // }
+            var i = 0;
+            while(i<10){
+                console.log(i);
+                i++;
+            }
+            var a = 0;
+            do{
+                console.log(a);
+                a++;
+            }while(a<10);
+
+        </script>
+    </body>
+</html>
