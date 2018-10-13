@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <p>
+            内置对象就是系统自带的对象里面有系统封装的函数可以直接使用
+        </p>
+        <p>
+            例如Math和Date里面就有很多的方法(函数)
+        </p>
+        <script>
+            // 1.Date
+            // date需要创建 就是new Date
+            var dt = new Date();
+            console.log(dt.getFullYear());
+            console.log(Math.abs(-1));//这个abs()方法是绝对值
+            console.log(Math.random());//这个是取大于等于0小于1的随机小数
+            console.log(Math.floor(1.234));//这个是向下取整,小于X的最大整数
+            console.log(Math.ceil(1.234));//向上取整
+            console.log(Math.floor(Math.random()*71+30))//取了一个大于等于30小于等于100的整数
+            // console.log(Math.floor(Math.random()*(y-x+1)+x))
+            // x≤数字≤y
+        </script>
+    </body>
+</html>
