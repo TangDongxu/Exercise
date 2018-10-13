@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <p>获取变量类型 typeof 运算符</p>
+        <p>C++会先赋值在自增</p>
+        <p>任何数据类型与字符串类型相加都会先变成字符串在相加</p>
+        <p>NAN意思是不是一个数值</p>
+        <p>比较运算符和</p>
+        <p>逻辑运算符&&,||,!与或非</p>
+        <p>&&逻辑与,当两边的值都为true时返回true,否则返回false
+            || 逻辑或,当两边值都为false时返回false,否则返回true
+             ! 逻辑非</p>
+        <p>
+            "+","-","*","/"代表着加减乘除;任何非字符串类型与字符串相加会变成字符串;
+            其余的与数字类型进行运算会转化成数字类型，转化不了会变成NAN：
+        </p>
+        <p>所以其他类型转化成字符串类型的最简单办法是加一个空的字符串
+           其他类型转化成数字类型就是*1
+        </p>
+        <p>布尔型的数值类型转化成数字类型false是0，true是1
+            除0以外的任何数字转换成布尔值都会是true,空字符串转换成数字将会是0</p>
+        <p>只有空字符串转换成布尔值时会是false,非空字符串转换成布尔值都会返回true</p>
+        <p>
+            数据类型相互转化:1.数字类型转化成字符串类型:加上一个空字符串
+                             2.数字类型转化成布尔型:用!!;0是false其余的数字是true
+                             3.字符串类型变成数字类型:*1,不能转化成数值的输出NAN，能的转化成数值*1，空字符串变成0；
+                             4.字符串类型变成布尔型:用!!,除了空字符串是false其余的是true
+                             5.布尔型转化成字符串类型:加上一个空字符串;
+                             6.布尔型转化成数字类型:*1;true是1，false是0；
+        </p>
+        <script>
+            var s = "小老虎";
+            s = s + "是条狗";
+            console.log(s);
+            var num = 1;
+            num++;
+            console.log(num++);
+            console.log(num);
+            var p = '123';
+            var q = true;
+            console.log(p + q);
+            console.log(true&&true);
+            var a = 'abs';
+            var b = 123;
+            var c = '';
+            var d = 0;
+            console.log(!!b);
+            console.log(!!d);
+            console.log(b + c);
+            console.log(d + c);
+            console.log(!!c);
+            console.log(!!a);
+            console.log(a*1);
+            console.log(c*1);
+            var msg = window.prompt("请输入一个数值","123");
+            console.log(msg + 1);
+            console.log(msg);
+            console.log(msg*1 + 1);
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
