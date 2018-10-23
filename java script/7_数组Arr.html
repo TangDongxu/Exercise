@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <p>数组是把一堆相似的数据有秩序的放在盒子里面类似于药房的柜子</p>
+        <p>数组的声明方法有两种:1.标准方法2.数组直接量方法</p>
+        <p>数组的添加和删除:1.从数组末尾添加:push
+                            2.从数组的末尾删除:pop
+                            3.从数组的开始添加:unshift
+                            4.从数组的开始删除:shift
+        </p>
+        <p>数组旋转:reserve</p>
+        <p>数组的排序:sort();</p>
+        <p>数组的循环:for(){}判断条件是小于数组长度,输出arr[i]</p>
+        <p>数组与字符串的转化:1.字符串转化成数组:split()
+                              2.数组转化成字符串:join()
+        </p>
+        <script>
+            <!--定义数组的两种方法-->
+         //   1.标准方法
+         var arr = new Array();
+         arr[0] = 1;
+         arr[1] = 2;
+         arr[3] = 4;
+         console.log(arr);
+        // 2.数组直接量方法
+            var arr = [1,2,3,4,,5];
+            console.log(arr);
+        //    数组的添加删除旋转和排序和分割
+            var arr = [1,3,2];
+            arr.push(4);
+            console.log(arr);
+            arr.pop();
+            console.log(arr);
+            arr.unshift(0);
+            console.log(arr);
+            arr.shift();
+            console.log(arr);
+            arr.reverse();
+            console.log(arr);
+            arr.sort();
+            console.log(arr);
+            // arr.join('#');
+            console.log( arr.join('#'));
+        //    数组的循环
+            var arr1 = [1,2,3,4,5,6,7,8];
+            for(var i=0;i<arr1.length;i++){
+                console.log(arr1[i]);
+            }
+        //    数组与字符串转化
+        //  1.字符串返回一个数组
+            var str = '1,2,3,4,5,6,7';
+            var arr2 = str.split(',');
+            console.log(arr2);
+        //    2.数组转变成字符串
+            var arr3 = [2,3,4,5,6,7];
+            console.log(arr3.join('#'));
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
