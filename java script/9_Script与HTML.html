@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            .cls1{
+                background: lime;
+            }
+            .cls2{
+                background:royalblue;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            script标签用于在HTML页面执行一些脚本
+        </p>
+        <p>
+            script标签有三个特殊的属性(当然,像id,class这样的属性它也是有的)它有三个常见的取值JavaScript,JScript,VBScript
+        </p>
+        <p>
+            对于JScript只有IE能够识别,其它浏览器会忽略这个标签其里面的内容.
+            而对于VBScript,只有Windows上的IE能够识别,运行.
+            然而language属性后来在XHTML中被type属性替代了.取值变成了text/javascript,text/jscript,text/vbscript
+        </p>
+        <p>
+            在Web浏览器中,我们只会使用JavaScript,type属性设置为text/javascript.
+        </p>
+        <p>
+            以前在HTML页面中,一些标签常会加一些诸如onclick,onmouseover这样的属性,这是一种事件绑定
+            用于指定当HTML页面某个元素上发生了什么事的时候去执行的JavaScript代码(当然也可以是其它客户端脚本)
+        </p>
+       <ul>
+           <li>onclick ,当鼠标点击一下时执行一次</li>
+           <li>onmouseout ,当鼠标移出去时执行一次</li>
+           <li>onmousedown ,当鼠标按下时执行一次</li>
+           <li>onmouseup ,当鼠标在上面松开(弹起)时执行一次</li>
+           <li>onmousedblclick ,当鼠标双击时执行一次</li>
+           <li>onload ,当对象加载完成时执行一次</li>
+       </ul>
+        <img src="../image/doushi.jpg" alt="图片没找到"
+             onclick="alert('你把我点疼了!')"
+             onmouseover="this.src='../image/jiesen.jpg'"
+             onmouseout="this.src='../image/doushi.jpg'">
+        <p>分析上面的代码,我们发现,这其实是在给一个对象this的属性src赋值,
+            但问题是我们并没有声明过一个叫this的对象!其实this对象是一个一直存在的一个对象,
+            它不能被声明(this是关键字).这里,this就是指"这个",指这个标签!
+            对于HTML中的元素,JavaScript会自动将其解析成一个对象
+            .对于下面的img标签,会解析成下面一个对象:</p>
+        <!--<img  src="../image/doushi.jpg" alt="内存堆栈" onload="myFn()"  />-->
+        <img id="img" src="../image/doushi.jpg" alt="内存堆栈"   />
+        <p>
+            若是在img之后还有许多代码要执行,会导致找不到myFn（）函数
+            HTML页面按照从上往下的顺序加载执行,当图象加载成功后,就去执行onload里的内容
+            (一个自定义函数),但由于script标签在下面若干代码之后,所以还没被加载,
+            因此会出错"myFn is undefined";这就是为什么要将script标签放在head部分的原因,
+            因为head在body前面,当body里的元素加载完成时,head中的script肯定加载完成了
+            但后来有了XHTML,有了"三层分离",W3C推出了DOM2,我们需要使用另一种方式绑定事件,获取HTML页面元素.
+            var img = document.getElementById("myImg");//我们通过ID来获取它
+            document.getElementById方法有个参数,一个字符串ID
+            然后,img就表示了那个图像标签对象
+            img.onclick = myFn;
+        </p>
+        <p>这样的新的DOM2中推出的三层分离方法并不适合把script标签放在head标签中，因为HTML从上往下加载,
+            当加载到script时,body部分在下面,还没有被加载,而JavaScript在浏览加载到时就会自动执行.
+            这时,页面上的ID为img的img还没被加载到, 所以会出错;
+            document.getElementById方法需要一个字符串形式的ID,而如果页面上没有ID为这个的元素,
+            它则会返回null(空对象);
+            而在下面一行,img.onclick这一句使用了一个空对象,
+            所以会在这里出错!
+        </p>
+        <p>
+            但标准仍然推荐将script放在head部分!那么,这就要用到另一个事件onload
+            window.onload = function （）{}将获取和绑定在这里面写出来
+            window相当于浏览器，就是等HTML加载完成后在执行里面的代码包括资源文件例如图片,
+        </p>
+        <p>
+            HTML DOM将整个页面当成一个document对象,
+            HTML里的标签都要通过document对象来访问.而文档中的每个标签,又会转换成一个对象
+            <!--例如<p class="demo" title="第一个段落:DOM树" id="p1">我们用一个p标签来演示</p>
+            它又会被转换成下面这个对象
+            {
+                tagName:"p",
+                className:"demo",
+                title:"第一个段落:DOM树",
+                id:"p1",
+                innerHTML:"我们用一个p标签来演示"
+            }
+            //你也许会奇怪,为什么标签的class属性会变成对象的className属性而不是class.
+            //class是JavaScript保留字!!!
+            //tagName表示它的标签名,而innerHTML表示它里面的HTML代码-->
+        </p>
+        <div id="div1" style="background:red;" >
+            我想上天
+        </div>
+        <div  id="div2"  class="cls1">
+            我想上北京
+        </div>
+        <script>
+            // function myFn() {
+            //     alert("图象加载完成了!");
+            // }
+            window.onload = function() {
+                // var img = document.getElementById('img');
+                // img.onload = function () {
+                //     alert("图象加载完成了!");
+                // };
+                // var oDiv1 = document.getElementById('div1');
+                //     oDiv1.innerHTML = "我不想上天了"
+                //     // oDiv1.style.background = 'blue';
+                var odiv1  = document.getElementById('div2');
+                    odiv1.onclick = function(){
+                    odiv1.innerHTML = "我其实是div2";
+                    odiv1.className = "cls2";
+
+                }
+
+            }
+
+
+        </script>
+    </body>
+</html>
